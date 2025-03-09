@@ -1,0 +1,16 @@
+CREATE TABLE policeRecord.Crime(
+	ID INT NOT NULL AUTO_INCREMENT,
+	CrimeNUM VARCHAR(10) UNIQUE NOT NULL,
+	CrimeType VARCHAR(30),
+	CommitDate DATE NOT NULL,
+	Closure VARCHAR(15) NOT NULL,
+	CriminalID INT,
+	VictimID INT,
+	PoliceOfficerID INT,
+	DepartmentID INT,
+	CONSTRAINT PK_Crime_ID PRIMARY KEY(ID),
+	CONSTRAINT FK_Criminal_ID FOREIGN KEY (CriminalID) REFERENCES Criminal(ID),
+	CONSTRAINT FK_VictimOfCrime_ID FOREIGN KEY (VictimID) REFERENCES Victim(ID),
+	CONSTRAINT FK_OfficerInvestigator_ID FOREIGN KEY (PoliceOfficerID) REFERENCES PoliceOfficer(ID),
+	CONSTRAINT FK_InvestigatorsDepartment_ID FOREIGN KEY (DepartmentID) REFERENCES Department(ID)
+);

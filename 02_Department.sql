@@ -1,0 +1,5 @@
+CREATE TABLE policeRecord.Department(
+	ID INT NOT NULL AUTO_INCREMENT,
+	DepartmentName VARCHAR(100) NOT NULL,
+	CONSTRAINT PK_DepartmentName_ID PRIMARY KEY(ID)
+);
